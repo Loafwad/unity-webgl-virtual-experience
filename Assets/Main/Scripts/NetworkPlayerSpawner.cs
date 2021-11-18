@@ -32,6 +32,8 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
 
         spawnedPlayerPrefab.GetComponent<EnableCamOnAwake>().EnableCam();
         characterConnectMenu.SetActive(false);
+        /* UpdatePlayersVisible(); */
+        spawnedPlayerPrefab.GetComponent<PhotonView>().RPC("UpdatePlayersVisible", RpcTarget.All);
     }
 
     public override void OnLeftRoom()
@@ -39,5 +41,9 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
         base.OnLeftRoom();
         PhotonNetwork.Destroy(spawnedPlayerPrefab);
     }
+
+
+
+
 
 }

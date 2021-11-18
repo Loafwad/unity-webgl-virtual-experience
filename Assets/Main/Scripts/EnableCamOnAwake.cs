@@ -16,5 +16,9 @@ public class EnableCamOnAwake : MonoBehaviour
             cm.enabled = true;
             cm.Priority = cm.Priority - PhotonNetwork.PlayerList.Length;
         }
+        else
+        {
+            Debug.LogWarning("Tried to acess cam is not owned by client");
+        }
     }
 }

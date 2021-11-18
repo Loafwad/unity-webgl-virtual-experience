@@ -8,12 +8,12 @@ using UnityEngine.SceneManagement;
 
 public class PhotonCreateRoom : MonoBehaviourPunCallbacks
 {
+    [SerializeField] private PhotonView playerPV;
     [SerializeField] private string roomName;
     [SerializeField] private string sceneName;
     public void OnClickCreateRoom(Level_Info level)
     {
-        //create room
-        //joinorcreatroom
+
         roomName = level.roomName;
         sceneName = level.sceneName;
         RoomOptions options = new RoomOptions();

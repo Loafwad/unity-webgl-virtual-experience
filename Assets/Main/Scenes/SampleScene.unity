@@ -5802,7 +5802,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1080699532
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9751,6 +9751,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lookSensitivity: {fileID: 961756089}
   cameraFOV: {fileID: 1697250498}
+  updatedText: {fileID: 1080699533}
+  chatInputField: {fileID: 1923127347}
+  sendChatMessageButton: {fileID: 1120641269}
 --- !u!1 &1983258987
 GameObject:
   m_ObjectHideFlags: 0
