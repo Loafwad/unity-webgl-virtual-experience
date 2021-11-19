@@ -6,8 +6,10 @@ using Photon.Realtime;
 
 public class ConnectToMaster : MonoBehaviourPunCallbacks
 {
+    [SerializeField] private GameObject loadingScreen;
     void Start()
     {
+        loadingScreen.SetActive(true);
         ConnectToserver();
     }
 
@@ -22,5 +24,6 @@ public class ConnectToMaster : MonoBehaviourPunCallbacks
         Debug.Log("Sucessfully connected to server");
         base.OnConnectedToMaster();
         PhotonNetwork.JoinLobby();
+        loadingScreen.SetActive(false);
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.SceneManagement;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
@@ -10,6 +11,12 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     void Start()
     {
         networkPlayerSpawner = this.GetComponent<NetworkPlayerSpawner>();
+    }
+
+    public void LeaveRoom()
+    {
+        PhotonNetwork.LeaveRoom();
+        SceneManager.LoadScene("MenuRoomSelect");
     }
 
     public override void OnJoinedLobby()
