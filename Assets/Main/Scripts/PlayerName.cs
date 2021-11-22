@@ -12,6 +12,7 @@ public class PlayerName : MonoBehaviourPun
     {
         if (PlayerPrefs.HasKey("PlayerName"))
         {
+            nameInputField.text = PlayerPrefs.GetString("PlayerName");
             return;
         }
         else

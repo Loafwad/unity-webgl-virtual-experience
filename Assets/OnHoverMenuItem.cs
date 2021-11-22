@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InspectMenu : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class OnHoverMenuItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    [SerializeField] private GameObject inspectMenu;
+    [SerializeField] private GameObject hoverMenu;
 
     bool isHovering;
     public void OnPointerEnter(PointerEventData eventData)
@@ -23,14 +23,11 @@ public class InspectMenu : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         if (isHovering)
         {
-            if (Input.GetMouseButton(1))
-            {
-                inspectMenu.SetActive(true);
-            }
-            else
-            {
-                inspectMenu.SetActive(false);
-            }
+            hoverMenu.SetActive(true);
+        }
+        else
+        {
+            hoverMenu.SetActive(false);
         }
     }
 }
